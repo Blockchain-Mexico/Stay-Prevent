@@ -2,8 +2,19 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import {router} from "next/client";
 
-
+const theme = extendTheme({
+    styles: {
+        global: (props: any) => ({
+            body: {
+                fontFamily: "Bai Jamjuree",
+                color: "white",
+                lineHeight: "base",
+            },
+        }),
+    },
+});
 function MyApp({ Component, pageProps }: AppProps) {
   const [mounted, setMounted] = useState(false);
 
